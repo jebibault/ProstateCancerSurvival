@@ -21,8 +21,8 @@ app.layout = html.Div([
 	    html.Br()]),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
         dcc.Tab(label='About', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict cancer-specific survival', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict overall survival', value='tab-predictOS', className='custom-tab', selected_className='custom-tab--selected')
+        dcc.Tab(label='Predict risk from prostate cancer', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='Predict risk from other causes', value='tab-predictOS', className='custom-tab', selected_className='custom-tab--selected')
     ]),
     html.Div(id='tabs-content-classes'),
 ], style=style)

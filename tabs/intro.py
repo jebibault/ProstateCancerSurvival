@@ -16,7 +16,7 @@ html.P([
 	'Many men do not benefit from treatment because the disease is either indolent or disseminated at diagnosis. Because prostate cancer progresses slowly, patients often die of competing causes.', 
 	html.Br(),
 	html.Br(),
-	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created models to predict 10-year cancer-specific and overall survival.',
+	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created models to predict the risk to die from prostate cancer or from any other cause, 10 years after a prostate cancer diagnosis.',
 	html.Br(),
 	html.Br(),
 ]),
