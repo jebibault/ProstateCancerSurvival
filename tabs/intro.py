@@ -45,13 +45,13 @@ dcc.Markdown("""
 	#### Models creation
 	To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776). 
 	The dataset was split into a training (n=7,021) and a testing (n=1,755) dataset.
-	XGBoost was used to predict 10-year cancer-specific and overall survival. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
+	XGBoost was used to predict the risk to die from prostate cancer or from any other cause 10 years after prostate cancer diagnosis. Hyperparameters were tuned with Bayesian Optimization in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
 	html.Br(),
 	dcc.Markdown("""
-	#### Models metrics: cancer-specific survival (CSS) and overall survival (OS)
+	#### Models metrics: risk to die from prostate cancer (PCa) or from any other cause (Other) 10 years after prostate cancer diagnosis.
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-	|  Metric      |  Definition				 	                                                           |     CSS      |       OS      |
+	|  Metric      |  Definition				 	                                                           |     PCa      |       Other      |
 	|--------------|-------------------------------------------------------------------------------------------|--------------|---------------|
 	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |   0.86 (±0.09)|
 	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |   0.65 (±0.03)|

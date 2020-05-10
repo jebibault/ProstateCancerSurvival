@@ -19,7 +19,7 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('#### Please answer these 30 questions to predict 10-year cancer-specific survival'),
+  dcc.Markdown('#### Please answer these 30 questions to predict the risk to die from prostate cancer 10 years after prostate cancer diagnosis.'),
   dcc.Markdown('#### Answers must reflect data at diagnosis'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction'),
   html.P([html.Br()]),
