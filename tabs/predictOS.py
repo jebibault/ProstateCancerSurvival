@@ -460,7 +460,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   model = pickle.load(open('models/10yOSmodel.pkl', 'rb'))
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
-  y_pred = np.round(y_pred, 2)
+  y_pred = np.round(y_pred, 0)
   results = f'{y_pred}%'
 
   explainer = shap.TreeExplainer(model)
