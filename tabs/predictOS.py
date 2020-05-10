@@ -95,7 +95,7 @@ layout = html.Div([
     type='number',
     value=''),
 
-  dcc.Markdown('###### What was the initial primary treatment performed?'),
+  dcc.Markdown('###### What is the initial primary treatment currently considered?'),
   dcc.Dropdown(
     id='treatment',
     options=[
