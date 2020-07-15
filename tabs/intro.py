@@ -8,7 +8,7 @@ layout = [
 html.P([html.Br()]),
 html.P([html.Br()]),
 dcc.Markdown("""
-#### What are these model for?"""),
+#### What are these models for?"""),
 html.P([
 	'In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer. But the management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. ',
 	html.Br(),
