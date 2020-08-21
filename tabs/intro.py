@@ -8,7 +8,7 @@ layout = [
 html.P([html.Br()]),
 html.P([html.Br()]),
 dcc.Markdown("""
-#### What are these models for?"""),
+#### What is this model for?"""),
 html.P([
 	'In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer. But the management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. ',
 	html.Br(),
@@ -16,7 +16,7 @@ html.P([
 	'Many men do not benefit from treatment because the disease is either indolent or disseminated at diagnosis. Because prostate cancer progresses slowly, patients often die of competing causes.', 
 	html.Br(),
 	html.Br(),
-	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created models to predict the risk to die from prostate cancer or from any other cause, 10 years after a prostate cancer diagnosis.',
+	'We created this model to predict the risk to die from prostate cancer within 10 years after diagnosis.',
 	html.Br(),
 	html.Br(),
 ]),
@@ -42,23 +42,23 @@ dcc.Markdown("""
 	html.Br(),
 	html.Br(),
 	dcc.Markdown("""
-	#### Models creation
+	#### Model creation
 	To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776). 
 	The dataset was split into a training (n=7,021) and a testing (n=1,755) dataset.
-	XGBoost was used to predict the risk to die from prostate cancer or from any other cause 10 years after prostate cancer diagnosis. Hyperparameters were tuned with Bayesian Optimization in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
+	XGBoost was used to predict the risk to die from prostate cancer within 10 years after diagnosis. Hyperparameters were tuned with Bayesian Optimization in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
 	html.Br(),
 	dcc.Markdown("""
-	#### Models metrics: risk to die from prostate cancer (PCa) or from any other cause (Other) 10 years after prostate cancer diagnosis.
+	#### Model metrics:
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-	|  Metric      |  Definition				 	                                                           |     PCa      |       Other      |
-	|--------------|-------------------------------------------------------------------------------------------|--------------|---------------|
-	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |   0.86 (±0.09)|
-	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |   0.65 (±0.03)|
-	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.60 (±0.08) |   0.79 (±0.04)|
-	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 (±0.07) |   0.72 (±0.03)|
-	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.80 (±0.04) |   0.84 (±0.02)|
-	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.54 (±0.07) |   0.59 (±0.03)|
+	|  Metric      |  Definition				 	                                                           |     PCa      |
+	|--------------|-------------------------------------------------------------------------------------------|--------------|
+	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |
+	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |
+	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.60 (±0.08) |
+	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 (±0.07) |
+	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.80 (±0.04) |
+	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.54 (±0.07) |
 	"""),
 	html.Br(),
 	html.Br(),

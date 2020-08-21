@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from app import app, server
-from tabs import intro, predictOS, predictCSS
+from tabs import intro, predictCSS
 
 style = {
     'maxWidth': '900px', 
@@ -15,14 +15,13 @@ app.layout = html.Div([
     html.A([html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true', style={'width' : '100%', 'margin-bottom': '15px', 'margin-top': '25px'})], href='http://med.stanford.edu/xinglab.html', target='_blank'),
     dcc.Markdown("## Predict prostate cancer survival with interpretable AI"),
     html.P([
-	    'This model allows you to predict the risk to die from prostate cancer or from any other cause 10 years after prostate cancer diagnosis.', 
+	    'This model allows you to predict the risk to die from prostate cancer within 10 years from diagnosis.', 
 	    html.Br(),
 	    html.Br(),
 	    html.Br()]),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
         dcc.Tab(label='About', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict risk from prostate cancer', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict risk from other causes', value='tab-predictOS', className='custom-tab', selected_className='custom-tab--selected')
+        dcc.Tab(label='Predict', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
     ]),
     html.Div(id='tabs-content-classes'),
 ], style=style)
@@ -31,7 +30,6 @@ app.layout = html.Div([
               [Input('tabs', 'value')])
 def render_content(tab):
     if tab == 'tab-intro': return intro.layout
-    elif tab == 'tab-predictOS': return predictOS.layout
     elif tab == 'tab-predictCSS': return predictCSS.layout
 
 if __name__ == '__main__':
